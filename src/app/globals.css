@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-gray-100; /* Define o fundo escuro e o texto claro */
+  }
+}
+
+@layer components {
+  aside {
+    @apply bg-gray-800; /* Fundo lateral escuro */
+  }
+
+  button {
+    @apply bg-transparent border-none cursor-pointer; /* Estilo do botão */
+  }
+
+  button:hover {
+    @apply opacity-80; /* Opacidade do botão ao passar o mouse */
+  }
+
+  h1, h2, h3, p {
+    @apply text-white; /* Texto branco */
+  }
+
+  a {
+    @apply text-green-500; /* Cor do link */
+  }
+
+  a:hover {
+    @apply underline; /* Sublinhado do link ao passar o mouse */
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
